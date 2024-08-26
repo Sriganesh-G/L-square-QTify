@@ -6,10 +6,7 @@
   font-style: normal;
   border: none;
   font-size: 18px;
-  padding: 9px;
+  padding: 10px 16px;
   border-radius: 12px;
-}
-
-.button:hover {
   cursor: pointer;
 }

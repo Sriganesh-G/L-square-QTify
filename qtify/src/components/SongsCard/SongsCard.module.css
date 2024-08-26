@@ -1,0 +1,31 @@
+.songsCard {
+  min-width: 159px;
+  min-height: auto;
+  height: auto;
+  overflow: hidden;
+
+  /*   marginLeft: 10px,
+  overflow: hidden,
+  maxWidth: "159px",
+  height: "205px",
+  borderRadius: "12px", */
+}
+
+.chipStyle {
+  background-color: black;
+  color: white;
+  width: 80px;
+  font-size: 10px;
+  margin: 5px 0;
+  align-self: center; /* Centers the Chip horizontally */
+}
+
+#chipStyle {
+  background-color: black;
+  color: white;
+  width: 80px;
+  font-size: 10px;
+  margin: 5px 0;
+  margin-bottom: 5px !important;
+  align-self: center; /* Centers the Chip horizontally */
+}
