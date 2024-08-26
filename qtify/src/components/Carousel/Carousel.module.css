@@ -1,0 +1,39 @@
+.carouselContainer {
+  position: relative;
+  padding: 20px 0px 0px 10px;
+}
+
+.singleCard {
+  padding: 10px 0px;
+  min-width: 159px;
+  min-height: 205px;
+  height: auto;
+}
+.imageStyle {
+  height: 205px;
+}
+
+.prevArrow,
+.nextArrow {
+  position: absolute;
+  top: 40%;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prevArrow {
+  position: absolute;
+  left: 2px;
+  z-index: 10;
+}
+
+.nextArrow {
+  right: 10px; /* Position on the right side */
+}
