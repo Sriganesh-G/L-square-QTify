@@ -1,19 +1,19 @@
 /* import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation"; // Import Swiper's Navigation component styles
+import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import LeftArrow from "../../assets/leftButton.png"; // Adjust path as necessary
+import LeftArrow from "../../assets/leftButton.png";
 import RightArrow from "../../assets/rightButton.png";
 import styles from "./Carousel.module.css";
 import SongsCard from "../SongsCard/SongsCard";
 
-const Carousel = ({ newAlbums = [] }) => {
-  //  const { title, image, follows } = newAlbums;
+const Carousel = ({ newAlbums = [], songs = [] }) => {
+  const items = newAlbums.length > 0 ? newAlbums : songs;
   return (
     <div className={styles.carouselContainer}>
       <Swiper
-        className={styles.singleCard}
+        className={styles.swiper}
         slidesPerView={7}
         spaceBetween={0}
         modules={[Navigation]}
@@ -22,8 +22,8 @@ const Carousel = ({ newAlbums = [] }) => {
           prevEl: `.${styles.prevArrow}`,
         }}
       >
-        {newAlbums.map((item) => (
-          <SwiperSlide className={styles.singleCard} key={item.id}>
+        {items.map((item) => (
+          <SwiperSlide key={item.id}>
             <SongsCard
               title={item.title}
               image={item.image}
@@ -50,12 +50,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import LeftArrow from "../../assets/leftButton.png"; // Adjust path as necessary
+import LeftArrow from "../../assets/leftButton.png";
 import RightArrow from "../../assets/rightButton.png";
 import styles from "./Carousel.module.css";
 import SongsCard from "../SongsCard/SongsCard";
 
-const Carousel = ({ newAlbums = [] }) => {
+const Carousel = ({ newAlbums = [], songs = [] }) => {
+  const items = newAlbums.length > 0 ? newAlbums : songs;
+  const isSongs = songs.length > 0;
+
   return (
     <div className={styles.carouselContainer}>
       <Swiper
@@ -68,12 +71,14 @@ const Carousel = ({ newAlbums = [] }) => {
           prevEl: `.${styles.prevArrow}`,
         }}
       >
-        {newAlbums.map((item) => (
+        {items.map((item) => (
           <SwiperSlide key={item.id}>
             <SongsCard
               title={item.title}
               image={item.image}
               follows={item.follows}
+              likes={item.likes}
+              isSongs={isSongs}
             />
           </SwiperSlide>
         ))}
