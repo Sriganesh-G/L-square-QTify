@@ -25,8 +25,8 @@ const Section = () => {
   const [songs, setSongs] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("all");
   // State for toggling Collapse
-  const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(false);
-  const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(false);
+  const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(true);
+  const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
