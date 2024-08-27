@@ -49,8 +49,7 @@ const Carousel = ({ newAlbums = [], songs = [] }) => {
 export default Carousel;
  */
 
-//------------------------------------------------
-
+//-----------------------------------------------------
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -101,15 +100,17 @@ const Carousel = ({ newAlbums = [], songs = [] }) => {
             />
           </SwiperSlide>
         ))}
+        <div
+          className={`${styles.prevArrow} ${
+            isBeginning ? styles.disabled : ""
+          }`}
+        >
+          <img src={RightArrow} alt="Previous" />
+        </div>
+        <div className={`${styles.nextArrow} ${isEnd ? styles.disabled : ""}`}>
+          <img src={LeftArrow} alt="Next" />
+        </div>
       </Swiper>
-      <div
-        className={`${styles.prevArrow} ${isBeginning ? styles.disabled : ""}`}
-      >
-        <img src={RightArrow} alt="Previous" />
-      </div>
-      <div className={`${styles.nextArrow} ${isEnd ? styles.disabled : ""}`}>
-        <img src={LeftArrow} alt="Next" />
-      </div>
     </div>
   );
 };
